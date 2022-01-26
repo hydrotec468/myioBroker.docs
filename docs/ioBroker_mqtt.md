@@ -4,8 +4,6 @@ lastChanged: "26.01.2022"
 ---
 
 # MQTT
----
----
 
 ## Allgemein
 Bei MQTT (Message Queuing Telemetry Transport)  
