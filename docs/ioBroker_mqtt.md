@@ -1,7 +1,6 @@
-| titel | MQTT |
-| last change | 28.01.2022 |
-| from | @hydrotec |
-
+| titel | last change | from |
+| -------- | -------- | -------- |
+| MQTT | 28.01.2022 | @hydrotec |
 
 # MQTT
 
