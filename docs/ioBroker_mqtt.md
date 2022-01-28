@@ -1,8 +1,5 @@
 # MQTT
 
----
----
-
 ## Allgemein
 Bei MQTT (Message Queuing Telemetry Transport)  
 handelt es sich um ein Netzwerkprotokoll, welches offen kommuniziert,  
