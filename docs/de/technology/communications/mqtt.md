@@ -1,6 +1,6 @@
 | titel | last change | from |
 | -------- | -------- | -------- |
-| MQTT | 28.01.2022 | [@hydrotec](https://forum.iobroker.net/user/hydrotec) |
+| MQTT | 29.01.2022 | [@hydrotec](https://forum.iobroker.net/user/hydrotec) |
 
 # MQTT
 
@@ -83,7 +83,7 @@ zu ioBroker angebunden werden können.
 
 ###### [zurück](#Inhalt)
 
-## Best Practice / Tutorial
+## BestPractice/Tutorial
      todo:  
       - Beispiel Konfiguration Server/Client  
       - eventuell Link zu einem Tutorial  
