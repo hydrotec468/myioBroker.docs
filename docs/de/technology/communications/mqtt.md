@@ -67,11 +67,10 @@ zu ioBroker angebunden werden können.
  - reiner MQTT Client  
  - es wird ein externer *Broker* (z.B. [mosquitto](https://mosquitto.org "https://mosquitto.org") ) vorausgesetzt  
  - spricht grundsätzlich mit allen Geräten, welche über das MQTT-Protokoll kommunizieren  
--
 
-     todo:  
-      - Hilfestellung wann welcher Adapter verwendet werden sollte  
-      - Entscheidungsmatrix wann mqtt als Server, wann als client  
+?> todo:  
+ - Hilfestellung wann welcher Adapter verwendet werden sollte  
+ - Entscheidungsmatrix wann mqtt als Server, wann als client  
 
 ###### [zurück](#Inhalt)
 
