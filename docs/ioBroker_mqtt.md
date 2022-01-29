@@ -21,7 +21,7 @@ Aktuell stehen in ioBroker drei Adapter unter dem Repository "*default*",
 und vier Adapter unter dem Repository "*latest*" zur Verfügung.  
 Mit diesen Adaptern können Geräte, welche das *MQTT-Protokoll* sprechen,  
 zu ioBroker angebunden werden können.  
-![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/images/Doku_mqtt_01.png)  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/Doku_mqtt_01.png)  
 
 1.) [hass.mqtt](https://github.com/smarthomefans/ioBroker.hass-mqtt#readme "https://github.com/smarthomefans/ioBroker.hass-mqtt#readme")  
 
