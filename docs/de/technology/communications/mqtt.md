@@ -8,7 +8,7 @@
 * [Allgemein](#Allgemein)
 * [Adapter](#Adapter)
 * [Topics](#Topics)
-* [Best Practice / Tutorial](#"Best Practice / Tutorial")
+* [Best Practice / Tutorial](#best-practice--tutorial)
 * [Issues](#Issues)
 
 ## Allgemein
