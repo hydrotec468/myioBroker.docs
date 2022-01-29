@@ -8,7 +8,7 @@
 * [Allgemein](#Allgemein)
 * [Adapter](#Adapter)
 * [Topics](#Topics)
-* [BestPractice/Tutorial](#BestPractice/Tutorial)
+* [Best Practice / Tutorial](#"Best Practice / Tutorial")
 * [Issues](#Issues)
 
 ## Allgemein
@@ -83,7 +83,7 @@ zu ioBroker angebunden werden können.
 
 ###### [zurück](#Inhalt)
 
-## BestPractice/Tutorial
+## Best Practice / Tutorial
      todo:  
       - Beispiel Konfiguration Server/Client  
       - eventuell Link zu einem Tutorial  
