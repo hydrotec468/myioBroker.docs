@@ -8,7 +8,7 @@
 * [Allgemein](#Allgemein)
 * [Adapter](#Adapter)
 * [Topics](#Topics)
-* [Best Practice / Tutorial](#Best Practice / Tutorial)
+* [Best Practice / Tutorial](#Best)
 * [Issues](#Issues)
 
 ## Allgemein
@@ -23,7 +23,7 @@ Ausführliche Informationen können unter den folgenden Links aufgerufen werden.
 [<https://mqtt.org/>](https://mqtt.org/)  
 [<https://de.wikipedia.org/wiki/MQTT>](https://de.wikipedia.org/wiki/MQTT)  
 
-### [zurück](#Inhalt)
+###### [zurück](#Inhalt)
 
 ## Adapter
 Aktuell stehen in ioBroker drei Adapter unter dem Repository "*default*",  
