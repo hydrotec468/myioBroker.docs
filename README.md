@@ -1,2 +1,2 @@
-# test-md.docs
-Testumgebung für Markdown Dokumente
+# myioBroker.docs
+Entwicklungsumgebung, um zu der offiziellen ioBroker Doku, Dokumente zu erstellen.
