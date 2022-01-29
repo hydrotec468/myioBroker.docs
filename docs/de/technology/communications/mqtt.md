@@ -75,23 +75,23 @@ zu ioBroker angebunden werden können.
 ###### [zurück](#Inhalt)
 
 ## Topics
-     todo:  
-      - etwas ausführlicher beschreiben  
-      - in der Adapterbeschreibung sind Beispiele  
-      - eventuell Grafik mit einbinden  
+?> todo:  
+ - etwas ausführlicher beschreiben  
+ - in der Adapterbeschreibung sind Beispiele  
+ - eventuell Grafik mit einbinden  
 
 ###### [zurück](#Inhalt)
 
 ## Best Practice / Tutorial
-     todo:  
-      - Beispiel Konfiguration Server/Client  
-      - eventuell Link zu einem Tutorial  
-      - Tools erwähnen 
+?> todo:  
+ - Beispiel Konfiguration Server/Client  
+ - eventuell Link zu einem Tutorial  
+ - Tools erwähnen 
 
 ###### [zurück](#Inhalt)
 
 ## Issues
-     todo:  
-      - auf derzeitige Probleme hinweisen  
+?> todo:  
+ - auf derzeitige Probleme hinweisen  
 
 ###### [zurück](#Inhalt)
