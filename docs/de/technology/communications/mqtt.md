@@ -31,10 +31,10 @@ Ausführliche Informationen können unter den folgenden Links aufgerufen werden.
 Der MQTT-Broker ist die zentrale Anlaufstelle für die MQTT-Clients.  
 Ein Client muss an dem Broker angemeldet sein, damit dieser seine *Payloads*,  
 über die *Topics*, dem Broker mitteilen, oder sie empfangen kann.  
-Der Broker akzeptiert erst einmal alle gesendeten *Topics* der Clients,  
-und stellt sie weiteren Clients zur Verfügung.  
-Damit ein Client, die eines anderen Clients zur Verfügung gestellten *Payloads*  
-empfangen kann, muss er zuerst die zugehörigen *Topics* abonieren.
+Der Broker akzeptiert erst einmal alle gesendeten *Payloads*,  
+in den entsprechenden *Topics* der Clients, und stellt sie weiteren Clients zur Verfügung.  
+Damit ein Client, den eines anderen Clients zur Verfügung gestellten *Payload*  
+empfangen kann, muss er zuerst den zugehörigen *Topic* abonieren.  
 
 
 ?> todo:  
