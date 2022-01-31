@@ -6,8 +6,8 @@
 
 ## Inhalt
 * [Allgemein](#Allgemein)
+* [Protokoll](#Protokoll)
 * [Adapter](#Adapter)
-* [Topics](#Topics)
 * [Best Practice / Tutorial](#best-practice--tutorial)
 * [Issues](#Issues)
 
@@ -22,6 +22,14 @@ Ausführliche Informationen können unter den folgenden Links aufgerufen werden.
 
 [<https://mqtt.org/>](https://mqtt.org/)  
 [<https://de.wikipedia.org/wiki/MQTT>](https://de.wikipedia.org/wiki/MQTT)  
+
+###### [zurück](#Inhalt)
+
+## Protokoll
+?> todo:  
+ - etwas ausführlicher beschreiben  
+ - in der Adapterbeschreibung sind Beispiele  
+ - eventuell Grafik mit einbinden  
 
 ###### [zurück](#Inhalt)
 
@@ -71,14 +79,6 @@ zu ioBroker angebunden werden können.
 ?> todo:  
  - Hilfestellung wann welcher Adapter verwendet werden sollte  
  - Entscheidungsmatrix wann mqtt als Server, wann als client  
-
-###### [zurück](#Inhalt)
-
-## Topics
-?> todo:  
- - etwas ausführlicher beschreiben  
- - in der Adapterbeschreibung sind Beispiele  
- - eventuell Grafik mit einbinden  
 
 ###### [zurück](#Inhalt)
 
