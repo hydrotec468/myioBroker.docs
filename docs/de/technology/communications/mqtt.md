@@ -26,6 +26,8 @@ Ausführliche Informationen können unter den folgenden Links aufgerufen werden.
 ###### [zurück](#Inhalt)
 
 ## Protokoll
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/Doku_mqtt_02.png)  
+
 ?> todo:  
  - etwas ausführlicher beschreiben  
  - in der Adapterbeschreibung sind Beispiele  
