@@ -1,6 +1,6 @@
 | titel | last change | from |
 | -------- | -------- | -------- |
-| MQTT | 29.01.2022 | [@hydrotec](https://forum.iobroker.net/user/hydrotec) |
+| MQTT | 31.01.2022 | [@hydrotec](https://forum.iobroker.net/user/hydrotec) |
 
 # MQTT
 
@@ -27,6 +27,15 @@ Ausführliche Informationen können unter den folgenden Links aufgerufen werden.
 
 ## Protokoll
 ![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/Doku_mqtt_02.png)  
+
+Der MQTT-Broker ist die zentrale Anlaufstelle für die MQTT-Clients.  
+Ein Client muss an dem Broker angemeldet sein, damit dieser seine *Payloads*,  
+über die *Topics*, dem Broker mitteilen, oder sie empfangen kann.  
+Der Broker akzeptiert erst einmal alle gesendeten *Topics* der Clients,  
+und stellt sie weiteren Clients zur Verfügung.  
+Damit ein Client, die eines anderen Clients zur Verfügung gestellten *Payloads*  
+empfangen kann, muss er zuerst die zugehörigen *Topics* abonieren.
+
 
 ?> todo:  
  - etwas ausführlicher beschreiben  
