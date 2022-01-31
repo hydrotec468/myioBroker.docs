@@ -35,6 +35,10 @@ Der Broker akzeptiert erst einmal alle gesendeten *Payloads*,
 in den entsprechenden *Topics* der Clients, und stellt sie weiteren Clients zur Verfügung.  
 Damit ein Client, den eines anderen Clients zur Verfügung gestellten *Payload*  
 empfangen kann, muss er zuerst den zugehörigen *Topic* abonieren.  
+  
+Zum besseren Verständnis, ein paar Beispiele.  
+
+Client A ist ein Temperatursensor, und sendet folgenden *Payload*.  
 
 
 ?> todo:  
