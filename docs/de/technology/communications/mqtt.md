@@ -35,7 +35,7 @@ Ausführliche Informationen können unter den folgenden Links aufgerufen werden.
 	 würde den Rahmen dieser Dokumentation überschreiten.  
 
   
-![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/Doku_mqtt_02.png)  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/Doku_mqtt_03.png)  
   
 Der MQTT-Broker ist die zentrale Anlaufstelle für die MQTT-Clients.  
 Ein Client muss an dem Broker angemeldet sein, damit dieser seine *Payloads*,  
