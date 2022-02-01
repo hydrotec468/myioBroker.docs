@@ -15,7 +15,7 @@
 Bei MQTT (Message Queuing Telemetry Transport) 
 handelt es sich um ein Netzwerkprotokoll, welches offen kommuniziert, 
 und auch bei minimaler Netzwerkbandbreite eingesetzt werden kann.  
-MQTT eignet sich sehr gut für das Internet der Dinge (IoT).  
+MQTT eignet sich sehr gut für das Internet der Dinge (IoT). 
 In Fachkreisen spricht man auch von  Machine-to-Machine-Kommunikation (M2M).  
 Es werden Daten (payloads) von Client zu Client über einen Broker ausgetauscht.  
 Ausführliche Informationen können unter den folgenden Links aufgerufen werden.  
@@ -28,10 +28,10 @@ Ausführliche Informationen können unter den folgenden Links aufgerufen werden.
 ## Protokoll
 
 ?> **Hinweis**:  
-     In diesem Abschnitt wird nur auf den gängigsten Weg,  
+     In diesem Abschnitt wird nur auf den gängigsten Weg, 
 	 MQTT zu nutzen, eingegangen.  
 	 Es bestehen viel mehr Möglichkeiten, wie man MQTT nutzen kann.  
-	 Hier alle Möglichkeiten aufzuzählen,  
+	 Hier alle Möglichkeiten aufzuzählen, 
 	 würde den Rahmen dieser Dokumentation überschreiten.  
 
   
