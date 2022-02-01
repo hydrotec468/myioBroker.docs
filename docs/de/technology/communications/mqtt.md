@@ -47,7 +47,7 @@ und stellt sie weiteren Clients zur Verfügung.
 Damit ein Client, den eines anderen Clients zur Verfügung gestellten *Payload*  
 empfangen kann, muss er zuerst den zugehörigen *Topic* abonnieren.  
 
-Was steckt hinter den Begriffen *Topic*, *Payload* und *abonnieren*.  
+Was steckt hinter den Begriffen *Topic*, *Payload* und *abonnieren*?  
 Unter *Topic* kann man sich eine Art Verzeichnisstruktur vorstellen.  
 Diese Struktur wird meistens von den Herstellern vorgegeben,  
 kann jedoch ebenso von Anwendern definiert werden.  
@@ -56,8 +56,7 @@ Grundsätzlich wird in einer Pfadangabe definiert, unter welcher Rubrik,
 von welchem Gerät und in welcher Sparte sich die Information (*Payload*) befindet.  
 
 Beispiel  
-
-     <Rubrik>/<Gerät>/<Sparte>/<Attribut>  
+`<Rubrik>/<Gerät>/<Sparte>/<Attribut>`  
 
 Bei *Payload* ist die eigentliche Nachricht gemeint.  
 Der Inhalt einer Nachricht, kann sich folgendermaßen zusammensetzen.  
@@ -67,12 +66,9 @@ Genauso ist auch nur ein *attribute* möglich.
 
 Beispiele  
 Format *json*  
-
-     {"state": "online"}  
-
+`{"state": "online"}`  
 Format *atribute*  
-
-     online  
+`online`  
 
 Damit der Broker weiß, welche Nachrichten ein Client bekommen möchte,  
 muss der Client die Nachrichten anfordern (*abonnieren*).  
@@ -81,38 +77,31 @@ den gewünschten *Topic* an den Broker übermittelt.
 Innerhalb dieser *Topics* kann mit Wildcards gearbeitet werden.  
 Die zwei gängigsten Wildcards sind ***#*** und ***+***.  
 Angenommen, das *Topic* ist folgendermaßen aufgebaut.  
-
-     myhome/client/sensors/temperature
-
+`myhome/client/sensors/temperature`  
 Dann kann man anschließend die angeforderten *Topics* mit den Wildcards anpassen.  
   
 Hier werden alle Attribute,  
 welche unter "myhome/client/sensors" gesendet werden, empfangen.  
-
-     myhome/client/sensors/#  
+`myhome/client/sensors/#`  
 
 Hier werden alle Sparten (inkl. aller Attribute),  
 welche unter "myhome/client" gesendet werden, empfangen.  
-
-     myhome/client/#  
+`myhome/client/#`  
 
 Hier wird alles unterhalb der Rubrik,  
 welche unter "myhome" gesendet werden, empfangen.  
-
-     myhome/#  
+`myhome/#`  
 
 Hier werden, von allen Clients, die *Payloads* mit der Rubrik,  
 der Sparte und dem Attribut,  
 welche unter "myhome/client(a/b/c/...)/sensors/temperature" gesendet werden,  
 empfangen.  
-
-     myhome/+/sensors/temperature  
+`myhome/+/sensors/temperature`  
 
 Hier werden, von allen Clients, die *Payloads* mit der Rubrik,  
 und der Sparte,  
 welche unter "myhome/client(a/b/c/...)/sensors" gesendet werden, empfangen.  
-
-     myhome/+/sensors/#  
+`myhome/+/sensors/#`       
 
 Wie zu erkennen ist, kann man die Wildcards auch kombinieren.  
 
