@@ -1,6 +1,6 @@
 | titel | last change | from |
 | -------- | -------- | -------- |
-| MQTT | 31.01.2022 | [@hydrotec](https://forum.iobroker.net/user/hydrotec) |
+| MQTT | 01.02.2022 | [@hydrotec](https://forum.iobroker.net/user/hydrotec) |
 
 # MQTT
 
@@ -26,25 +26,102 @@ Ausführliche Informationen können unter den folgenden Links aufgerufen werden.
 ###### [zurück](#Inhalt)
 
 ## Protokoll
-![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/Doku_mqtt_02.png)  
 
+?> **Hinweis**:  
+     In diesem Abschnitt wird nur auf den gängigsten Weg,  
+	 MQTT zu nutzen, eingegangen.  
+	 Es bestehen viel mehr Möglichkeiten, wie man MQTT nutzen kann.  
+	 Hier alle Möglichkeiten aufzuzählen,  
+	 würde den Rahmen dieser Dokumentation überschreiten.  
+
+  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/Doku_mqtt_02.png)  
+  
 Der MQTT-Broker ist die zentrale Anlaufstelle für die MQTT-Clients.  
 Ein Client muss an dem Broker angemeldet sein, damit dieser seine *Payloads*,  
-über die *Topics*, dem Broker mitteilen, oder sie empfangen kann.  
+über die *Topics*, dem Broker mitteilen (*Publish*),  
+oder sie empfangen (*Subsribe*) kann.  
 Der Broker akzeptiert erst einmal alle gesendeten *Payloads*,  
-in den entsprechenden *Topics* der Clients, und stellt sie weiteren Clients zur Verfügung.  
+in den entsprechenden *Topics* der Clients,  
+und stellt sie weiteren Clients zur Verfügung.  
 Damit ein Client, den eines anderen Clients zur Verfügung gestellten *Payload*  
-empfangen kann, muss er zuerst den zugehörigen *Topic* abonieren.  
+empfangen kann, muss er zuerst den zugehörigen *Topic* abonnieren.  
+
+Was steckt hinter den Begriffen *Topic*, *Payload* und *abonnieren*.  
+Unter *Topic* kann man sich eine Art Verzeichnisstruktur vorstellen.  
+Diese Struktur wird meistens von den Herstellern vorgegeben,  
+kann jedoch ebenso von Anwendern definiert werden.  
+Kommt darauf an, um was für eine Art von Gerät es sich handelt.  
+Grundsätzlich wird in einer Pfadangabe definiert, unter welcher Rubrik,  
+von welchem Gerät und in welcher Sparte sich die Information (*Payload*) befindet.  
+
+Beispiel  
+
+     <Rubrik>/<Gerät>/<Sparte>/<Attribut>  
+
+Bei *Payload* ist die eigentliche Nachricht gemeint.  
+Der Inhalt einer Nachricht, kann sich folgendermaßen zusammensetzen.  
+Wobei es da keine direkten Richtlinien gibt, wie sich so eine Nachricht aufbaut.  
+In den meisten Fällen wird das Format *json* verwendet.  
+Genauso ist auch nur ein *attribute* möglich.  
+
+Beispiele  
+Format *json*  
+
+     {"state": "online"}  
+
+Format *atribute*  
+
+     online  
+
+Damit der Broker weiß, welche Nachrichten ein Client bekommen möchte,  
+muss der Client die Nachrichten anfordern (*abonnieren*).  
+Das geschieht in der Form, das der Client unter dem Kanal *Subscribe*  
+den gewünschten *Topic* an den Broker übermittelt.  
+Innerhalb dieser *Topics* kann mit Wildcards gearbeitet werden.  
+Die zwei gängigsten Wildcards sind ***#*** und ***+***.  
+Angenommen, das *Topic* ist folgendermaßen aufgebaut.  
+
+     myhome/client/sensors/temperature
+
+Dann kann man anschließend die angeforderten *Topics* mit den Wildcards anpassen.  
   
-Zum besseren Verständnis, ein paar Beispiele.  
+Hier werden alle Attribute,  
+welche unter "myhome/client/sensors" gesendet werden, empfangen.  
 
-Client A ist ein Temperatursensor, und sendet folgenden *Payload*.  
+     myhome/client/sensors/#  
 
+Hier werden alle Sparten (inkl. aller Attribute),  
+welche unter "myhome/client" gesendet werden, empfangen.  
 
-?> todo:  
- - etwas ausführlicher beschreiben  
- - in der Adapterbeschreibung sind Beispiele  
- - eventuell Grafik mit einbinden  
+     myhome/client/#  
+
+Hier wird alles unterhalb der Rubrik,  
+welche unter "myhome" gesendet werden, empfangen.  
+
+     myhome/#  
+
+Hier werden, von allen Clients, die *Payloads* mit der Rubrik,  
+der Sparte und dem Attribut,  
+welche unter "myhome/client(a/b/c/...)/sensors/temperature" gesendet werden,  
+empfangen.  
+
+     myhome/+/sensors/temperature  
+
+Hier werden, von allen Clients, die *Payloads* mit der Rubrik,  
+und der Sparte,  
+welche unter "myhome/client(a/b/c/...)/sensors" gesendet werden, empfangen.  
+
+     myhome/+/sensors/#  
+
+Wie zu erkennen ist, kann man die Wildcards auch kombinieren.  
+
+Der Aufbau der *Topics* und die Verwendung von Wildcards,  
+wie sie innerhalb des Adapters verwendet werden,  
+ist der jeweiligen Adapterreferenz zu entnehmen.  
+
+Zum besseren Verständnis, sind unter [Best Practice / Tutorial](#best-practice--tutorial)  
+ein paar Beispiele aufgeführt.  
 
 ###### [zurück](#Inhalt)
 
@@ -100,8 +177,10 @@ zu ioBroker angebunden werden können.
 ## Best Practice / Tutorial
 ?> todo:  
  - Beispiel Konfiguration Server/Client  
+ - Eindeutige IDs verwenden
+ - Konfiguration des Ports beachten  
+ - Tools erwähnen  
  - eventuell Link zu einem Tutorial  
- - Tools erwähnen 
 
 ###### [zurück](#Inhalt)
 
