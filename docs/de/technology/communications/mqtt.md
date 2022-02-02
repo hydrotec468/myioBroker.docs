@@ -33,7 +33,7 @@ Ausführliche Informationen können unter den folgenden Links aufgerufen werden.
 	 Hier alle Möglichkeiten aufzuzählen, würde den Rahmen dieser Dokumentation überschreiten.  
 
 
-![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/Doku_mqtt_04.png)  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_01.drawio.png)  
   
 Der MQTT-Broker ist die zentrale Anlaufstelle für die MQTT-Clients. 
 Ein Client muss an dem Broker angemeldet sein, damit dieser seine *Payloads* 
@@ -144,7 +144,7 @@ Aktuell stehen in ioBroker drei Adapter unter dem Repository "*default*",
 und vier Adapter unter dem Repository "*latest*" zur Verfügung. 
 Mit diesen Adaptern können Geräte, welche das *MQTT-Protokoll* sprechen, 
 zu ioBroker angebunden werden können.  
-![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/Doku_mqtt_01.png)  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_01.png)  
 
 1.) [hass.mqtt](https://github.com/smarthomefans/ioBroker.hass-mqtt#readme "https://github.com/smarthomefans/ioBroker.hass-mqtt#readme")  
 
