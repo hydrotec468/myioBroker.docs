@@ -112,7 +112,7 @@ myhome/MultiSensor1/status
 
 Durch einen gezielten Einsatz von Wildcards kann man mehrere *Topics* zusammengefasst abonnieren. 
 
-**Wildcard** ***#***
+**Wildcard** ***#***  
 Alle *Topics* welche unter "myhome" gesendet werden.  
 `myhome/#`
 
@@ -122,12 +122,12 @@ Nur den Client "myhome/MultiSensor1" abonnieren.
 Eingegrenzt auf die Sensoren.  
 `myhome/MultiSensor1/sensors/#`
 
-**Wildcard** ***+***
+**Wildcard** ***+***  
 Um die Temperaturwerte von mehreren MultiSensoren die nach dem oben angegebenen Schema 
 ihre Werte *publishen* zu erhalten, ist folgender *subscribe* der einfachste Weg.  
 `myhome/+/sensors/temperature`
 
-**Wildcard Kombination** ***#*** und ***+***
+**Wildcard Kombination** ***#*** und ***+***  
 Alle Werte (Temperatur, Luftfeuchtigkeit, Luftdruck) von allen MultiSensoren empfangen.  
 `myhome/+/sensors/#`
 
