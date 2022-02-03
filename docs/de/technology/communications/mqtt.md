@@ -1,6 +1,6 @@
 | titel | last change | from |
 | -------- | -------- | -------- |
-| MQTT | 02.02.2022 | [@hydrotec](https://forum.iobroker.net/user/hydrotec) |
+| MQTT | 03.02.2022 | [@hydrotec](https://forum.iobroker.net/user/hydrotec) |
 
 # MQTT
 
@@ -152,7 +152,9 @@ zu ioBroker angebunden werden können.
 | -------- | -------- |
 | **Code frequency** | [GitHub Insights](https://github.com/smarthomefans/ioBroker.hass-mqtt/graphs/code-frequency "https://github.com/smarthomefans/ioBroker.hass-mqtt/graphs/code-frequency") |
 
- -  wird in Verbindung zu *Home Assistant* genutzt  
+ - wird in Verbindung zu *Home Assistant* genutzt  
+ - unterstützt nur Schalter und Sensoren
+ - baut auf den Adapter "MQTT Broker/Client" auf  
 
 2.) [Sonoff](https://github.com/ioBroker/ioBroker.sonoff#readme "https://github.com/ioBroker/ioBroker.sonoff#readme")
 
@@ -160,7 +162,10 @@ zu ioBroker angebunden werden können.
 | -------- | -------- |
 | **Code frequency** | [GitHub Insights](https://github.com/ioBroker/ioBroker.sonoff/graphs/code-frequency "https://github.com/ioBroker/ioBroker.sonoff/graphs/code-frequency") |
 
- -  wird in Verbindung zu *Tasmota* und *ESP* genutzt  
+ - wird in Verbindung zu *Tasmota* und *ESP* genutzt  
+ - kann **nicht** als MQTT-Broker für andere Geräte verwendet werden
+ - der intern gestellte Broker akzeptiert nur vorgegebene Topics  
+   (können durch Anfragen erweitert werden)  
 
 3.) [MQTT Broker/Client](https://github.com/ioBroker/ioBroker.mqtt#readme "https://github.com/ioBroker/ioBroker.mqtt#readme")
 
@@ -169,7 +174,8 @@ zu ioBroker angebunden werden können.
 | **Code frequency** | [GitHub Insights](https://github.com/ioBroker/ioBroker.mqtt/graphs/code-frequency "https://github.com/ioBroker/ioBroker.mqtt/graphs/code-frequency") |
 
  - kann sowohl als *Client*, wie auch als *Broker* konfiguriert werden  
- - in der *Client* Version, wird ein externer *Broker* (z.B. [mosquitto](https://mosquitto.org "https://mosquitto.org") ) vorausgesetzt  
+ - der *Broker* übernimmt auch *Client* Aufgaben  
+ - in der *Client* Version, wird ein vorhandener *Broker* (z.B. [mosquitto](https://mosquitto.org "https://mosquitto.org") ) vorausgesetzt  
  - spricht grundsätzlich mit allen Geräten, welche über das MQTT-Protokoll kommunizieren  
  
 4.) [MQTT-Client](https://github.com/Pmant/ioBroker.mqtt-client#readme "https://github.com/Pmant/ioBroker.mqtt-client#readme")
@@ -179,12 +185,32 @@ zu ioBroker angebunden werden können.
 | **Code frequency** | [GitHub Insights](https://github.com/Pmant/ioBroker.mqtt-client/graphs/code-frequency "https://github.com/Pmant/ioBroker.mqtt-client/graphs/code-frequency") |
 
  - reiner MQTT Client  
- - es wird ein externer *Broker* (z.B. [mosquitto](https://mosquitto.org "https://mosquitto.org") ) vorausgesetzt  
+ - es wird ein vorhandener *Broker* (z.B. [mosquitto](https://mosquitto.org "https://mosquitto.org") ) vorausgesetzt  
  - spricht grundsätzlich mit allen Geräten, welche über das MQTT-Protokoll kommunizieren  
 
-?> todo:  
- - Hilfestellung wann welcher Adapter verwendet werden sollte  
- - Entscheidungsmatrix wann mqtt als Server, wann als client  
+### Resümee
+
+Alle Adapter sind für das wozu sie erstellt wurden geeignet. Die Entscheidung, 
+welcher Adapter für einen der Richtige ist, kommt auf die gewünschten Anforderungen an. 
+Wer neben ioBroker noch Home Assistant mit *MQTT Discovery* nutzt, sollte **hass-mqtt** näher betrachten. 
+Wenn Tasmota oder ESP Geräte eingebunden werden, dann ist **Sonoff** die richtige Wahl. 
+Um allgemein MQTT zu nutzen ist **MQTT Broker/Client** der empfohlene Adapter. 
+**MQTT Broker/Client** nimmt eine Sonderstellung unter den Adaptern ein. 
+Er kann sowohl als Broker, wie auch als Client konfiguriert werden. 
+Sollte noch keine MQTT Umgebung vorhanden, bzw. noch kein Broker (z.B. mosquitto) eingerichtet sein, 
+dann empfiehlt es sich den Adapter als Broker zu nutzen. 
+Ansonsten, wenn ioBroker in eine bestehende MQTT Landschaft integriert werden soll, 
+ist der Client die bessere Auswahl. 
+Damit die Status von Objekten anderer Adapter in ioBroker per MQTT kommunizieren können, 
+der ist mit dem Adapter **MQTT-Client** gut bedient. 
+Es ist auch möglich mehrere MQTT Adapter/Instanzen parallel zu betreiben. 
+Das erfordert allerdings genauerer Beachtung der Einstellungen, 
+damit die Adapter/Instanzen untereinander nicht im Konflikt stehen.  
+
+?> **Hinweis**:  
+ - Werden mehrere MQTT-Broker parallel betrieben, ist es notwendig das jeder Broker auf einen anderen Port hört.  
+ - Möchte man mehrere MQTT-Clients einsetzen, muss jeder Client seine eigene, unverwechselbare Client-ID besitzen.  
+ - bei der Nutzung mehrerer Instanzen darauf achten, das die Topics sich nicht überschneiden.  
 
 ###### [zurück](#Inhalt)
 
