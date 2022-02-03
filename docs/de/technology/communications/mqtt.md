@@ -193,7 +193,7 @@ zu ioBroker angebunden werden können.
 Alle Adapter sind für das wozu sie erstellt wurden geeignet. Die Entscheidung, 
 welcher Adapter für einen der Richtige ist, kommt auf die gewünschten Anforderungen an. 
 Wer neben ioBroker noch Home Assistant mit *MQTT Discovery* nutzt, sollte **hass-mqtt** näher betrachten. 
-Wenn Tasmota oder ESP Geräte eingebunden werden, dann ist **Sonoff** die richtige Wahl. 
+Wenn Tasmota oder ESP Geräte eingebunden werden, dann ist **Sonoff** die logische Wahl. 
 Um allgemein MQTT zu nutzen ist **MQTT Broker/Client** der empfohlene Adapter. 
 **MQTT Broker/Client** nimmt eine Sonderstellung unter den Adaptern ein. 
 Er kann sowohl als Broker, wie auch als Client konfiguriert werden. 
@@ -217,8 +217,6 @@ damit die Adapter/Instanzen untereinander nicht im Konflikt stehen.
 ## Best Practice / Tutorial
 ?> todo:  
  - Beispiel Konfiguration Server/Client  
- - Eindeutige IDs verwenden
- - Konfiguration des Ports beachten  
  - Tools erwähnen  
  - eventuell Link zu einem Tutorial  
 
