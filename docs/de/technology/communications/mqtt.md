@@ -1,6 +1,6 @@
 | titel | last change | from |
 | -------- | -------- | -------- |
-| MQTT | 03.02.2022 | [@hydrotec](https://forum.iobroker.net/user/hydrotec) |
+| MQTT | 10.02.2022 | [@hydrotec](https://forum.iobroker.net/user/hydrotec) |
 
 # MQTT
 
@@ -215,8 +215,52 @@ damit die Adapter/Instanzen untereinander nicht im Konflikt stehen.
 ###### [zurück](#Inhalt)
 
 ## Best Practice / Tutorial
+
+### Beispiel Konfigurationen
+
+Am Beispiel des Adapters **MQTT Broker/Client** folgend zwei Ersteinrichtungen zu den Konfigurationen *Broker* und *Client*. 
+Die Einstellungen basieren auf der Standard Ersteinrichtung der Instanz. 
+Genaueres zu den Einstellungsmöglichkeiten kann unter der Adapter Referenz 
+[MQTT Broker/Client Konfiguration](https://github.com/ioBroker/ioBroker.mqtt#configuration "https://github.com/ioBroker/ioBroker.mqtt#configuration") 
+nachgelesen werden.
+
+**Broker/Server**
+
+Zur Installation des Adapters **MQTT Broker/Client** auf der Admin Oberfläche unter *Adapter* nach *mqtt* filtern. 
+Innerhalb des Adapters auf das **+** klicken, um eine Instanz zu installieren.  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_02.png)  
+Nachdem die Instanz erfolgreich installiert wurde,  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_03.png) 
+wird automatisch die Konfigurationsseite der Instanz geöffnet. 
+Bis auf *"Typ"* und *"Authentifizierungseinstellungen"* bleibt alles unverändert.  
+Bei Typ, durch klick auf den Menüpfeil rechts, *"Server/Broker"* auswählen. 
+Und unter den Authentifizierungseinstellungen den Benutzer und das zugehörige Passwort eintragen.  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_04.png)  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_05.png)  
+Nachdem die Einstellungen mit *"Speichern und Schliessen"* übernommen wurden, muss man die Instanz noch starten.  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_06.png)  
+Nach dem ersten Start der Instanz wird noch ein Warnhinweis angezeigt. 
+Das bedeutet lediglich, das noch kein Client an dem Broker angemeldet ist.  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_07.png)  
+Die gestartete Instanz legt gleich die ersten Objekte an.  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_08.png)  
+Die Einstellungen zu dem Broker sind hiermit abgeschlossen. Die Clients können nun an dem Broker angemeldet werden. 
+In diesem Beispiel wird das MQTT Tool *mqtt.fx* als Client verwendet. Damit wird ein Temperatursensor simuliert, 
+um zu verdeutlichen, wie *Topic* und *Payload* des Clients unter den Objekten angelegt wird.  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_09.png)  
+Der Client ist erfolgreich an dem Broker angemeldet, und er kann die Daten an den Broker übertragen. 
+Beispielsweise der Temperatursensor sendet den Payload "*{"temperature": "22", "unit": "°C"}*" 
+in dem Topic "*myhome/TestClient/sensors/temperature*".  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_10.png)  
+Dann werden die Objekte in ioBroker folgendermaßen angelegt.  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_11.png)  
+
+
+**Client/Subscriber**
+
+
 ?> todo:  
- - Beispiel Konfiguration Server/Client  
+ - Beispiel Konfiguration Client  
  - Tools erwähnen  
  - eventuell Link zu einem Tutorial  
 
