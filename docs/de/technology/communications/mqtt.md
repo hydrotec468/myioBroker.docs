@@ -215,8 +215,8 @@ damit die Adapter/Instanzen untereinander nicht im Konflikt stehen.
 ###### [zurück zu Inhalt](#Inhalt)
 
 ## Best Practice / Tutorial
-* [Broker/Server](#Broker/Server)
-* [Client/Subscriber](#Client/Subscriber)
+* [Broker/Server](#BrokerServer)
+* [Client/Subscriber](#ClientSubscriber)
 * [Tools](#Tools)
 
 ### Beispiel Konfigurationen
