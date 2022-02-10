@@ -229,8 +229,8 @@ nachgelesen werden.
 Zur Installation des Adapters **MQTT Broker/Client** auf der Admin Oberfläche unter *Adapter* nach *mqtt* filtern. 
 Innerhalb des Adapters auf das **+** klicken, um eine Instanz zu installieren.  
 ![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_02.png)  
-Nachdem die Instanz erfolgreich installiert wurde, 
-![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_03.png) 
+Nachdem die Instanz erfolgreich installiert wurde,  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_03.png)  
 wird automatisch die Konfigurationsseite der Instanz geöffnet. 
 Bis auf *"Typ"* und *"Authentifizierungseinstellungen"* bleibt alles unverändert.  
 Bei Typ, durch klick auf den Menüpfeil rechts, *"Server/Broker"* auswählen. 
