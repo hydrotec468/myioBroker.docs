@@ -260,7 +260,7 @@ Dann werden die Objekte in ioBroker folgendermaßen angelegt.
 
 ?> Hinweis:  
  - Damit man Payloads auch versenden kann, muss man derzeit einen kleinen Umweg nehmen. 
-   siehe  [Issues](#Issues)
+   (siehe  [Issues](#Issues))
 
 ###### [zurück zu Best Practice / Tutorial](#best-practice--tutorial)
 
@@ -295,7 +295,7 @@ oder mehrere Clients mit den gewünschten Topics, anlegen.
 
 ?> Hinweis:  
  - Damit man Payloads auch versenden kann, muss man derzeit einen kleinen Umweg nehmen. 
-   siehe  [Issues](#Issues)
+   (siehe  [Issues](#Issues))
 
 ###### [zurück zu Best Practice / Tutorial](#best-practice--tutorial)
 
