@@ -217,6 +217,7 @@ damit die Adapter/Instanzen untereinander nicht im Konflikt stehen.
 ## Best Practice / Tutorial
 * [Broker/Server](#BrokerServer)
 * [Client/Subscriber](#ClientSubscriber)
+* [Eigene Datenpunkte anlegen](#Eigene-Datenpunkte-anlegen)
 * [Tools](#Tools)
 
 ### Beispiel Konfigurationen
@@ -293,9 +294,15 @@ Wenn es erforderlich ist, das auf mehrere Topics gehört werden soll,
 dann kann man entweder bei *"Subscribe Pattern"* eine kommaseparierte Liste mit Topics, 
 oder mehrere Clients mit den gewünschten Topics, anlegen. 
 
+#### Eigene Datenpunkte anlegen
+
 ?> Hinweis:  
- - Damit man Payloads auch versenden kann, muss man derzeit einen kleinen Umweg nehmen. 
-   (siehe  [Issues](#Issues))
+ - Ab der Adminversion >5.3.0 können eigene Datenpunkte folgendermaßen angelegt werden, 
+   um Payloads auch an andere Clients zu senden, welche unterschiedliche Topics zum Senden/Empfangen verwenden. 
+   (Adminversion <5.3.0 siehe [Issues](#Issues))
+
+?> todo:  
+ - Beschreibung einfügen
 
 ###### [zurück zu Best Practice / Tutorial](#best-practice--tutorial)
 
@@ -309,6 +316,9 @@ Tools erwähnen
 
 ## Issues
 
+?> Hinweis:  
+ - Damit man Payloads auch versenden kann, muss man derzeit (admin Version <5.3.0) einen kleinen Umweg nehmen. 
+   
 Stand 02/2022 ist es nicht möglich eigene Datenpunkte unter dem Objektbaum *"mqtt"* anzulegen. 
 Da stellenweise ein Datenpunkt benötigt wird, um Payloads an einen Client zu senden, 
 gibt es zwei Möglichkeiten dieses zu bewerkstelligen.  
@@ -374,6 +384,7 @@ function correctObject(id,arr){
 Einmal mal das Skript starten. (kann danach wieder gestoppt werden)  
 ![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_19.png)  
 Danach kann man unter dem Objektbaum *"mqtt.0.\*"* eigene Datenpunkte anlegen.
+
 
 ###### [zurück zu Inhalt](#Inhalt)
 
