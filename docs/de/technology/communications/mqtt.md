@@ -314,8 +314,13 @@ Da stellenweise ein Datenpunkt benötigt wird, um Payloads an einen Client zu se
 gibt es zwei Möglichkeiten dieses zu bewerkstelligen.  
 
 **1.) Mit Javascript**  
-Dankeschön an [@fastfoot](https://forum.iobroker.net/topic/46814/admin5-ich-kann-keine-objekte-mehr-manuell-anlegen/130?_=1644606064721 "https://forum.iobroker.net/topic/46814/admin5-ich-kann-keine-objekte-mehr-manuell-anlegen/130?_=1644606064721") 
-für die Bereitstellung der Vorlage.  
+Dankeschön an 
+[@fastfoot](https://forum.iobroker.net/topic/46814/admin5-ich-kann-keine-objekte-mehr-manuell-anlegen/130?_=1644606064721 
+"https://forum.iobroker.net/topic/46814/admin5-ich-kann-keine-objekte-mehr-manuell-anlegen/130?_=1644606064721") 
+für die Bereitstellung der Vorlage, und an 
+[@mickym](https://forum.iobroker.net/topic/51468/solved-zigbee2mqtt-setup/10?_=1644600457463 
+"https://forum.iobroker.net/topic/51468/solved-zigbee2mqtt-setup/10?_=1644600457463") 
+zur Überarbeitung des Skripts zu MQTT.  
 Voraussetzung ist eine installierte *"javascript"* Instanz mit der aktivierten Einstellung *"Kommando "setObject" erlauben"*.  
 ![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_16.png)  
 Im Bereich *Skripte* eine neue JS-Datei anlegen.  
