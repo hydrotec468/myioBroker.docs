@@ -308,8 +308,66 @@ Tools erwähnen
 ###### [zurück zu Inhalt](#Inhalt)
 
 ## Issues
-?> todo:  
- - auf derzeitige Probleme hinweisen  
+
+Stand 02/2022 ist es nicht möglich eigene Datenpunkte unter dem Objektbaum *"mqtt"* anzulegen. 
+Da stellenweise ein Datenpunkt benötigt wird, um Payloads an einen Client zu senden, 
+gibt es zwei Möglichkeiten dieses zu bewerkstelligen.  
+
+**1.) Mit Javascript**  
+Dankeschön an [@fastfoot](https://forum.iobroker.net/topic/46814/admin5-ich-kann-keine-objekte-mehr-manuell-anlegen/130?_=1644606064721 "https://forum.iobroker.net/topic/46814/admin5-ich-kann-keine-objekte-mehr-manuell-anlegen/130?_=1644606064721") 
+für die Bereitstellung der Vorlage.  
+Voraussetzung ist eine installierte *"javascript"* Instanz mit der aktivierten Einstellung *"Kommando "setObject" erlauben"*.  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_16.png)  
+Im Bereich *Skripte* eine neue JS-Datei anlegen.  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_17.png)  
+Am Besten noch einen aussagekräftigen Namen vergeben, und mit *OK* bestätigen.  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_18.png)  
+Anschließend in dem Eingabefeld den folgenden Code einfügen, und abspeichern.  
+
+```
+/**
+* Zweck:       Korrigiert übergeordnete Ordnerstrukturen eines Datenpunkts
+* Datum:      07.08.2021
+* Autor:       @fastfoot
+*/
+//              In den Settings der Javascript-Instanz muss setObject erlaubt sein!!!
+
+let arr = [],
+  id = '';
+
+const ids = $('mqtt.0.*');
+ids.each(idTmp => {
+  arr=idTmp.split('.');
+  arr.splice(arr.length-1);
+  id=arr.join('.');
+  if(arr[0] === 'mqtt'){
+      correctObject(id, arr);
+  }
+})
+
+function correctObject(id,arr){
+  if(arr.length === 2) return;
+  if(!existsObject(id)){
+      let obj = {};
+      obj = {
+          type: 'folder',
+          common:{
+              name: arr[arr.length - 1]
+          }
+      }
+      extendObject(id, obj, e => {
+          if (e) log('Fehler beim Schreiben des Objektes: '+ id + ' ' + e);
+      })
+  }
+  arr.splice(arr.length - 1);
+  id = arr.join('.');
+  correctObject(id, arr);
+}
+```
+
+Einmal mal das Skript starten. (kann danach wieder gestoppt werden)  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_19.png)  
+Danach kann man unter dem Objektbaum *"mqtt.0.\*"* eigene Datenpunkte anlegen.
 
 ###### [zurück zu Inhalt](#Inhalt)
 
