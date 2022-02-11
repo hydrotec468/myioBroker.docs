@@ -330,6 +330,7 @@ Anschließend in dem Eingabefeld den folgenden Code einfügen, und abspeichern.
 * Datum:      07.08.2021
 * Autor:       @fastfoot
 */
+
 //              In den Settings der Javascript-Instanz muss setObject erlaubt sein!!!
 
 let arr = [],
@@ -340,7 +341,7 @@ ids.each(idTmp => {
   arr=idTmp.split('.');
   arr.splice(arr.length-1);
   id=arr.join('.');
-  if(arr[0] === 'mqtt'){
+  if(arr[0] === '0_userdata' || arr[0] === 'alias' || arr[0] === 'mqtt' || arr[0] === 'javascript'){
       correctObject(id, arr);
   }
 })
