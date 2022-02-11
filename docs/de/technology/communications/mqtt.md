@@ -1,6 +1,6 @@
 | titel | last change | from |
 | -------- | -------- | -------- |
-| MQTT | 10.02.2022 | [@hydrotec](https://forum.iobroker.net/user/hydrotec) |
+| MQTT | 11.02.2022 | [@hydrotec](https://forum.iobroker.net/user/hydrotec) |
 
 # MQTT
 
@@ -225,16 +225,16 @@ Am Beispiel des Adapters **MQTT Broker/Client** folgend zwei Ersteinrichtungen z
 Die Einstellungen basieren auf der Standard Ersteinrichtung der Instanz. 
 Genaueres zu den Einstellungsmöglichkeiten kann unter der Adapter Referenz 
 [MQTT Broker/Client Konfiguration](https://github.com/ioBroker/ioBroker.mqtt#configuration "https://github.com/ioBroker/ioBroker.mqtt#configuration") 
-nachgelesen werden.
-
-#### Broker/Server
+nachgelesen werden.  
 
 Zur Installation des Adapters **MQTT Broker/Client** auf der Admin Oberfläche unter *Adapter* nach *mqtt* filtern. 
 Innerhalb des Adapters auf das **+** klicken, um eine Instanz zu installieren.  
 ![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_02.png)  
-Nachdem die Instanz erfolgreich installiert wurde,  
+Nachdem die Instanz erfolgreich installiert wurde, wird automatisch die Konfigurationsseite der Instanz geöffnet.  
 ![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_03.png)  
-wird automatisch die Konfigurationsseite der Instanz geöffnet. 
+
+#### Broker/Server
+
 Bis auf *"Typ"* und *"Authentifizierungseinstellungen"* bleibt alles unverändert.  
 Bei Typ, durch klick auf den Menüpfeil rechts, *"Server/Broker"* auswählen. 
 Und unter den Authentifizierungseinstellungen den Benutzer und das zugehörige Passwort eintragen.  
@@ -262,7 +262,32 @@ Dann werden die Objekte in ioBroker folgendermaßen angelegt.
 
 #### Client/Subscriber
 
-Beispiel einfügen
+Zu diesem Beispiel wird ein funktionierender Broker ausserhalb von ioBroker vorausgesetzt. 
+Der Broker ist unter der Adresse *"<ip.des.mqtt.brokers>:1883"* erreichbar, 
+und mit *"user:password"* geschützt.  
+Folgende Einstellungen müssen vorgenommen werden, damit die Instanz als Client dienen kann. 
+Bei *"Typ"*, durch klick auf den Menüpfeil rechts, *"Client/Subscriber"* auswählen. 
+Bei den *"Verbindungseinstellungen"* die Adresse und den Port eintragen, 
+unter welcher der Broker erreichbar ist. 
+Und unter den *"Authentifizierungseinstellungen"* den Benutzer und das zugehörige Passwort eintragen.  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_12.png)  
+Den gewünschten Topic, welchen der Client bei dem Broker abonnieren soll, 
+wird bei *"Subscribe Pattern"* eingetragen. Die standardmäßig gesetzten Haken entfernen. 
+Und unter *"Client ID"* noch eine eindeutige, unverwechselbare Bezeichnung des Clients eintragen.  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_13.png)  
+Nachdem die Einstellungen mit *"Speichern und Schliessen"* übernommen wurden, muss man die Instanz noch starten.  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_06.png)  
+Wenn alles richtig konfiguriert wurde, verbindet sich der Client mit dem Broker, 
+und wartet auf die eingestellten Nachrichten des Brokers.  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_14.png)  
+Die ersten Objekte sollten jetzt auch schon angelegt sein.  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_15.png)  
+Damit ist die Einrichtung des Clients schon beendet. 
+Ab sofort wird, sobald eine Nachricht von dem Broker an den Client übermittelt wird, 
+zu jedem Payload unter dem gewünschten Topic ein Objekt angelegt. 
+Wenn es erforderlich ist, das auf mehrere Topics gehört werden soll, 
+dann kann man entweder bei *"Subscribe Pattern"* eine kommaseparierte Liste mit Topics, 
+oder mehrere Clients mit den gewünschten Topics, anlegen. 
 
 ###### [zurück zu Best Practice / Tutorial](#best-practice--tutorial)
 
