@@ -1,6 +1,6 @@
 | titel | last change | from |
 | -------- | -------- | -------- |
-| MQTT | 11.02.2022 | [@hydrotec](https://forum.iobroker.net/user/hydrotec) |
+| MQTT | 12.02.2022 | [@hydrotec](https://forum.iobroker.net/user/hydrotec) |
 
 # MQTT
 
