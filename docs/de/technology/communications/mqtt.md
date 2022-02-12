@@ -218,7 +218,7 @@ damit die Adapter/Instanzen untereinander nicht im Konflikt stehen.
 * [Broker/Server](#BrokerServer)
 * [Client/Subscriber](#ClientSubscriber)
 * [Eigene Datenpunkte anlegen](#Eigene-Datenpunkte-anlegen)
-* [Tools](#Tools)
+* [MQTT Tools](#MQTT-Tools)
 
 ### Beispiel Konfigurationen
 
@@ -259,10 +259,6 @@ in dem Topic "*myhome/TestClient/sensors/temperature*".
 Dann werden die Objekte in ioBroker folgendermaßen angelegt.  
 ![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_11.png)  
 
-?> Hinweis:  
- - Damit man Payloads auch versenden kann, muss man derzeit einen kleinen Umweg nehmen. 
-   (siehe  [Issues](#Issues))
-
 ###### [zurück zu Best Practice / Tutorial](#best-practice--tutorial)
 
 #### Client/Subscriber
@@ -283,11 +279,11 @@ Und unter *"Client ID"* noch eine eindeutige, unverwechselbare Bezeichnung des C
 Nachdem die Einstellungen mit *"Speichern und Schliessen"* übernommen wurden, muss man die Instanz noch starten.  
 ![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_06.png)  
 Wenn alles richtig konfiguriert wurde, verbindet sich der Client mit dem Broker, 
-und wartet auf die eingestellten Nachrichten des Brokers.  
+und wartet auf die angeforderten Nachrichten des Brokers.  
 ![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_14.png)  
 Die ersten Objekte sollten jetzt auch schon angelegt sein.  
 ![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_15.png)  
-Damit ist die Einrichtung des Clients schon beendet. 
+Damit ist die Einrichtung des Clients beendet. 
 Ab sofort wird, sobald eine Nachricht von dem Broker an den Client übermittelt wird, 
 zu jedem Payload unter dem gewünschten Topic ein Objekt angelegt. 
 Wenn es erforderlich ist, das auf mehrere Topics gehört werden soll, 
@@ -296,14 +292,50 @@ oder mehrere Clients mit den gewünschten Topics, anlegen.
 
 #### Eigene Datenpunkte anlegen
 
-?> todo:  
- - Beschreibung einfügen
+Es gibt Clients, welche für Senden und Empfangen unterschiedliche Topics nutzen. 
+Zum Beispiel nutzt ein Schalter das Topic `myhome/Switch1/status` um seinen Status mitzuteilen. 
+Um den Schalter zu steuern, erwartet der Client des Schalters einen Payload unter dem Topic `myhome/Switch1/status/set`. 
+Dieser Topic, inkl. Payload, wird nicht automatisch angelegt, da er von keinem Client gesendet wird. 
+Damit man den Payload zum Steuern des Schalters aus ioBroker an den Client übermitteln kann, 
+muss der Datenpunkt manuell angelegt werden. 
+Um in ioBroker einen Datenpunkt von Hand anlegen zu können, 
+muss die Admin Oberfläche in den Expertenmodus umgeschaltet werden.  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_16.png)  
+
+!> **Warnung**  
+ - Bei eingeschaltetem Expertenmodus kann man durch unbedachtes Handeln ioBroker lahm legen
+
+Zuerst muss der Datenpunkt *"status"* in einen Kanal umgewandelt werden.  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_17.png)  
+1.) Den in der Hierarchie des Topics untersten Ordner anwählen  
+2.) Auf Objekt hinzufügen (**+**) klicken  
+3.) Typ einstellen, und den gleichen Namen vergeben  
+4.) Abschließend Hinzufügen auswählen  
+
+Jetzt kann unter dem Kanal *"status"* ein neuer Datenpunkt angelegt werden.  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_18.png)  
+1.) Den Kanal *"status"* anwählen  
+2.) Auf Objekt hinzufügen (**+**) klicken  
+3.) Typ und Zustandstyp einstellen, bei dem Namen *"set"* eingeben  
+4.) Abschließend Hinzufügen auswählen  
+
+Damit kann der Schalter über den Topic `myhome/Switch1/status/set` 
+mit dem Payload `{"status": "ON"}` bzw. `{"status": "OFF"}` gesteuert werden.  
+![](https://raw.githubusercontent.com/hydrotec468/test-md.docs/main/docs/de/media/mqtt_screenshot_19.png)  
 
 ###### [zurück zu Best Practice / Tutorial](#best-practice--tutorial)
 
-#### Tools
+#### MQTT Tools
 
-Tools erwähnen
+Manchmal kann es ganz nützlich sein, das man ein Tool verwendet. 
+Zum Beispiel wenn man einen bestimmten Topic überprüfen möchte. 
+Hier zwei empfehlenswerte Tools, welche am häufigsten verwendet werden.  
+[mqtt-explorer](https://mqtt-explorer.com/ "https://mqtt-explorer.com/")  
+[MQTT.fx](http://www.mqttfx.jensd.de/ "http://www.mqttfx.jensd.de/")  
+Wenn man sich zu weiteren Tools informieren möchte, 
+folgend zwei Anlaufstellen in denen eine große Auswahl an Tools vorgestellt wird.  
+[<https://www.emqx.com/en/blog/mqtt-client-tools>][]  
+[<http://www.steves-internet-guide.com/mqtt-tools/>][]  
 
 ###### [zurück zu Best Practice / Tutorial](#best-practice--tutorial)
 
@@ -311,11 +343,23 @@ Tools erwähnen
 
 ## Issues
 
-?> todo:  
- - Links einfügen
+Meistens werden Fehler innerhalb eines Adapters zuerst im 
+[ioBroker Forum](https://forum.iobroker.net/category/4/deutsch "https://forum.iobroker.net/category/4/deutsch") 
+gepostet. Dem Hilfesuchenden wird dabei relativ schnell geholfen, doch es ist nicht zwangsläufig der Fall, 
+das auch der Entwickler des Adapters diese Fehlermeldung mitbekommt. 
+Wenn zusätzlich noch ein Issue unter GitHub bei dem entsprechenden Adapter erstellt wird, 
+erreicht diese Fehlermeldung im Normalfall schneller den Entwickler.  
+  
+Direktlinks zu den Issues bei den Adaptern auf GitHub.  
+1.) [hass.mqtt](https://github.com/smarthomefans/ioBroker.hass-mqtt/issues "https://github.com/smarthomefans/ioBroker.hass-mqtt/issues")  
+2.) [Sonoff](https://github.com/ioBroker/ioBroker.sonoff/issues "https://github.com/ioBroker/ioBroker.sonoff/issues")  
+3.) [MQTT Broker/Client](https://github.com/ioBroker/ioBroker.mqtt/issues "https://github.com/ioBroker/ioBroker.mqtt/issues")  
+4.) [MQTT-Client](https://github.com/Pmant/ioBroker.mqtt-client/issues "https://github.com/Pmant/ioBroker.mqtt-client/issues")  
 
 ###### [zurück zu Inhalt](#Inhalt)
 
 
 [<https://mqtt.org/>]: https://mqtt.org/  
 [<https://de.wikipedia.org/wiki/MQTT>]: https://de.wikipedia.org/wiki/MQTT  
+[<https://www.emqx.com/en/blog/mqtt-client-tools>]: https://www.emqx.com/en/blog/mqtt-client-tools  
+[<http://www.steves-internet-guide.com/mqtt-tools/>]: http://www.steves-internet-guide.com/mqtt-tools/  
