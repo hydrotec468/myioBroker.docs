@@ -292,6 +292,8 @@ Wenn es erforderlich ist, das auf mehrere Topics gehört werden soll,
 dann kann man entweder bei *"Subscribe Pattern"* eine kommaseparierte Liste mit Topics, 
 oder mehrere Clients mit den gewünschten Topics, anlegen. 
 
+###### [zurück zu Best Practice / Tutorial](#best-practice--tutorial)
+
 #### Eigene Datenpunkte anlegen
 
 Es gibt Clients, welche für Senden und Empfangen unterschiedliche Topics nutzen. 
